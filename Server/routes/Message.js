@@ -1,0 +1,10 @@
+const multer=require('multer');
+const upload=multer({storage:multer.diskStorage({})});
+const express=require('express');
+const { isLoggedIn } = require('../middleware/Auth');
+const {sendMessage,getAllMessages, MarkAsSeen}=require('../Controller/MessageController');
+const Router=express.Router();
+Router.post("/sendmessage/:id",isLoggedIn,upload.single("image"),sendMessage);
+Router.get("/getmessage/:id",isLoggedIn,getAllMessages);
+Router.post("/markasSeen/:messageId",isLoggedIn,MarkAsSeen);
+module.exports=Router;

@@ -1,0 +1,12 @@
+const multer=require('multer');
+const upload=multer({storage:multer.diskStorage({})});
+const {signup,Login, checkAuth}=require('../Controller/UserController');
+const express=require('express');
+const { isLoggedIn } = require('../middleware/Auth');
+const { getAllUsers } = require('../Controller/UserRoute');
+const Router=express.Router();
+Router.post("/signup",upload.single("image"),signup);
+Router.post("/login",Login);
+Router.get("/getalluser",isLoggedIn,getAllUsers);
+Router.get("/checkuser",isLoggedIn,checkAuth);
+module.exports=Router;
