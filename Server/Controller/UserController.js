@@ -11,13 +11,11 @@ return json.sign({id},process.env.JWT_KEY);
 module.exports.Login=async(req,res)=>
 {
     const {email,password}=req.body;
-    console.log(email+" "+password);
     if(!isEmail(email))
     {
         return res.json({success:"false",error:"please enter a valid email address"});
     }
     const user=await User.findOne({email:email});
-    console.log(user);
     if(!user)
     {
         return res.json({sucess:false,error:"user do not exist"});
@@ -28,13 +26,11 @@ module.exports.Login=async(req,res)=>
         return res.json({success:false,error:"incorrect user id or password"});
     }
     const token=await generateToken(user._id);
-    console.log(token);
      res.json({success:true,token:token,user:user});
 }
 module.exports.signup=async(req,res)=>
 {
     try {
-    console.log("hello");
     const {name,email,password,bio}=req.body;
     if(!isEmail(email))
     {
@@ -52,11 +48,8 @@ module.exports.signup=async(req,res)=>
     {
         console.log(err);
     }
-    console.log(upload+" "+bio);
     const salt=await bcrypt.genSalt(10);
-      console.log(salt+" ");
     const hashedPassword=await bcrypt.hash(password,salt);
-       console.log("hello");
     const user=new User({
         name:name,
         email:email,
@@ -65,11 +58,11 @@ module.exports.signup=async(req,res)=>
         profile:upload
     });
     await user.save();
-    console.log(user);
     if(!user)
     {
        return res.json({success:false,error:"error while creating user"});
     }
+    const token=await generateToken(user._id);
     res.json({success:true,user:user,token:token});
     
     } catch (error) {

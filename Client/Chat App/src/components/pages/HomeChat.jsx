@@ -5,10 +5,15 @@ import { Outlet } from 'react-router-dom'
 function HomeChat() {
   return (
    <>
-   <div className='flex flex-row'>
-    <Sidebar/>
-    {screen.width>800 && <Outlet/> }
-   </div>
+    <div className="flex flex-row h-screen">
+      {/* Sidebar always visible */}
+      <Sidebar />
+
+      {/* Chatbox (Outlet) visible only on md+ screens */}
+      <div className="hidden md:flex flex-1">
+        <Outlet />
+      </div>
+    </div>
    </>
   )
 }

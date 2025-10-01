@@ -2,7 +2,6 @@ const Message = require('../models/Message');
 const user=require('../models/User');
 module.exports.getAllUsers=async(req,res)=>
 {
-    console.log("heyyy");
     const users=await user.find({_id:{$ne:req.user._id}});
     let filter={};
      await Promise.all(users.map(async (user)=>
@@ -17,6 +16,5 @@ module.exports.getAllUsers=async(req,res)=>
     {
        return res.json({success:false,error:"error while fetching users"});
     }
-    console.log(users);
     res.json({success:true,users:users,seenlength:filter});
 }

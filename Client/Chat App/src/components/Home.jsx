@@ -11,9 +11,6 @@ function Home() {
        <Sidebar/>
        <ChatSection/>
      </div>
-    
-    
-    
     </>
   )
 }

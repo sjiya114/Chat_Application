@@ -66,7 +66,7 @@ export default function AuthContextProvider({ children }) {
         nav("/home");
       }
       else {
-        toast.error(data.error);
+        toast.error(data.error || "error while logging user");
       }
       
     } catch (error) {
