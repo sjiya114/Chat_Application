@@ -19,11 +19,10 @@ function App() {
         <Route path="/" element={<Login/>} />
         <Route path="/signup" element={<Signup/>} />
         {token?<Route path='/sidebar' element={user && <HomeChat/>}>
-          <Route path='/sidebar/chatbox' element={user && <ChatSection/>} />
         </Route>:nav("/")}
         {token?<Route path='/chatbox' element={user && <ChatSection/>}  />:nav("/")}
        {token? <Route path='/profile' element={user && <Profile/>}/>:nav("/")}
-        {token?<Route path='/home' element={user &&  <Home/>}/>:nav("/")}
+        {/* {token?<Route path='/home' element={user &&  <Home/>}/>:nav("/")} */}
       </Routes>
     </>
   )

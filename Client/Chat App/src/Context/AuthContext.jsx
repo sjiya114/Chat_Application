@@ -63,7 +63,7 @@ export default function AuthContextProvider({ children }) {
         setToken(data.token);
         localStorage.setItem("token", data.token);
         console.log(user);
-        nav("/home");
+        nav("/sidebar");
       }
       else {
         toast.error(data.error || "error while logging user");
@@ -85,7 +85,7 @@ export default function AuthContextProvider({ children }) {
         localStorage.setItem("user", data.user);
         setToken(data.token);
         localStorage.setItem("token", data.token);
-        nav("/home");
+        nav("/sidebar");
       }
       else {
         toast.error(data.error);

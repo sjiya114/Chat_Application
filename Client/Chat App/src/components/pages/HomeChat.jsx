@@ -1,17 +1,16 @@
 import React from 'react'
 import Sidebar from './Sidebar'
-import { Outlet } from 'react-router-dom'
 
 function HomeChat() {
   return (
    <>
-    <div className="flex flex-row h-screen">
+    <div className="flex flex-row">
       {/* Sidebar always visible */}
-      <Sidebar />
+      <div className='w-1/2'>
+         <Sidebar />
+      </div>
+      <div className='w-1/2'>
 
-      {/* Chatbox (Outlet) visible only on md+ screens */}
-      <div className="hidden md:flex flex-1">
-        <Outlet />
       </div>
     </div>
    </>
