@@ -22,7 +22,6 @@ function App() {
         </Route>:nav("/")}
         {token?<Route path='/chatbox' element={user && <ChatSection/>}  />:nav("/")}
        {token? <Route path='/profile' element={user && <Profile/>}/>:nav("/")}
-        {/* {token?<Route path='/home' element={user &&  <Home/>}/>:nav("/")} */}
       </Routes>
     </>
   )
