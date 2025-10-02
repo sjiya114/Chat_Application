@@ -43,13 +43,7 @@ function Sidebar() {
         {filteredUsers.map((data, index) =>
         (
           <div key={index} onClick={(e) => { setSelectedUser(data);
-           if(window.innerWidth> 768){
-               nav("/sidebar/chatbox")
-           }
-           else
-           {
             nav("/chatbox")
-           }
          }} 
           className='flex cursor-pointer flex-row space-x-4'>
             <div>
