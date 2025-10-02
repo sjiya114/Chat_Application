@@ -43,7 +43,7 @@ function Sidebar() {
         {filteredUsers.map((data, index) =>
         (
           <div key={index} onClick={(e) => { setSelectedUser(data);
-           if(screen.width>600){
+           if(window.innerWidth> 768){
                nav("/sidebar/chatbox")
            }
            else
