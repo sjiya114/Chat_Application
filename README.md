@@ -10,7 +10,6 @@ Welcome to the **Chat Application**! This project brings real-time messaging to 
 
 - **💬 Real-Time Messaging:** Instant exchange of messages between users.
 - **🔒 User Authentication:** Secure registration and login system.
-- **👥 Group Chats:** Create, join, and manage chat groups.
 - **📎 File Sharing:** Share images and documents in conversations.
 - **🔔 Notifications:** Stay updated with new messages and alerts.
 - **🎨 Responsive Design:** Works smoothly on desktop and mobile devices.
