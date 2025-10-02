@@ -6,7 +6,7 @@ import axios from 'axios';
 export const ChatContext = createContext();
 export const ChatContextProvider = function ({ children }) {
     const [users,setUsers]=useState([]);
-    const [selectedUser,setSelectedUser]=useState('');
+    const [selectedUser,setSelectedUser]=useState(localStorage.getItem("selecteduser"));
     const [messages,setMessages]=useState([]);
     const [unseenMessage,setUnseenMessage]=useState([]);
     const {user,getOnlineUsers,token,socket}=useContext(AuthContext);

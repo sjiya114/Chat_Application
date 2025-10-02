@@ -10,7 +10,7 @@ function HomeChat() {
       <Sidebar />
 
       {/* Chatbox (Outlet) visible only on md+ screens */}
-      <div className="hidden lg:flex flex-1">
+      <div className="hidden md:flex flex-1">
         <Outlet />
       </div>
     </div>
