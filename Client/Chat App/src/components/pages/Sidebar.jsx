@@ -5,7 +5,7 @@ import { ChatContext } from "../../Context/ChatContext";
 import { AuthContext } from "../../Context/AuthContext";
 import { useNavigate } from "react-router-dom";
 import bgimage from "../../assets/bgimage.png";
-import searchicon from "../../assets/searchicon.svg";
+import searchicon from "../../assets/searchIcon.svg";
 
 function Sidebar() {
   const { users, getUsers, setSelectedUser } = useContext(ChatContext);
